@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.service.catsubs" name="CatSubs" version="0.0.1~alpha" provider-name="florence-wolfe">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1"/>
+    <import addon="script.module.httpx" version="0.27.0" />
+  </requires>
+  <extension point="xbmc.service" library="resources/lib/service.py" />
+  <extension point="xbmc.python.script" library="resources/lib/script.py" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <license>MIT</license>
+    <summary lang="en">Automatic subtitles for your content</summary>
+    <source>https://github.com/florence-wolfe/plugin.service.catsubs</source>
+	<assets>
+		<icon>resources/images/icon.png</icon>
+	</assets>
+	<summary lang="en_GB">
+		Automatically download and use subtitles.
+	</summary>
+    <description lang="en">
+		Automatically download subtitles as soon you start any video. Subtitles are downloaded from a number of online sources including the selected Kodi subtitles service.
+	</description>
+  </extension>
+</addon>
