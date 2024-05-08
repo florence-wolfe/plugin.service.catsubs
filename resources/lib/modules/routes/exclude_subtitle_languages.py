@@ -1,7 +1,7 @@
-from modules.gui_components.multiselect import (
+from ..gui_components.multiselect import (
     handle_multiselect_dialog,
 )
-from modules.constants import languages
+from ..constants import languages
 
 language_keys = list(languages.keys())
 

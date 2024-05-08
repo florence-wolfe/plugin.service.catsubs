@@ -1,6 +1,6 @@
 import xbmcgui
 from typing import List, Optional, Sequence
-from modules.constants import addon
+from ..constants import addon
 
 
 def get_multiselect_setting(setting_id: str) -> List[str]:

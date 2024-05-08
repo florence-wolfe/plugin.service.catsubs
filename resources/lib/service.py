@@ -1,8 +1,7 @@
-import xbmc
+import xbmc  # type: ignore
 import sys
 
 sys.modules["_asyncio"] = None  # type: ignore
-
 from modules.monitor import CatSubsMonitor  # noqa: E402
 from modules.player import CatSubsPlayer  # noqa: E402
 from modules.logger import log  # noqa: E402

@@ -1,5 +1,5 @@
 def get_providers():
-    from modules.subtitle_providers.open_subtitles_com import (
+    from ..subtitle_providers.open_subtitles_com import (
         OpenSubtitlesCom,
     )
 

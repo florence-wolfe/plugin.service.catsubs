@@ -1,5 +1,5 @@
 import xbmc
-from modules.constants import ADDON_NAME, addon
+from .constants import ADDON_NAME, addon
 
 
 def log(message: str, level=xbmc.LOGINFO):

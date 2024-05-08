@@ -22,15 +22,10 @@ httpx==0.27.0
 idna==3.7
     # via anyio
     # via httpx
-jinja2==3.1.3
 kodistubs==21.0.0
-    # via pyxbmct
-markupsafe==2.1.5
-    # via jinja2
 mypy==1.10.0
 mypy-extensions==1.0.0
     # via mypy
-pyxbmct @ git+https://github.com/romanvm/script.module.pyxbmct@2c8d70a12166fffa44c0a809e882032769805efd
 ruff==0.4.3
 sniffio==1.3.1
     # via anyio

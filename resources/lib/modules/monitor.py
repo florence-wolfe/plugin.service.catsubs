@@ -1,5 +1,5 @@
 import xbmc
-from modules.logger import log
+from .logger import log
 
 
 class CatSubsMonitor(xbmc.Monitor):

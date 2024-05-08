@@ -1,5 +1,5 @@
 import xbmcgui
-from modules.gui_components.custom_list import handle_custom_list_dialog
+from ..gui_components.custom_list import handle_custom_list_dialog
 
 
 def exclude_audio_languages():

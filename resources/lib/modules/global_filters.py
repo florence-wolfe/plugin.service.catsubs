@@ -1,9 +1,9 @@
 import xbmc
 import datetime
 from typing import List
-from service import player
-from modules.constants import addon
-from modules.logger import log
+from ..service import player
+from .constants import addon
+from .logger import log
 
 
 def is_video_excluded_by(setting_id: str):

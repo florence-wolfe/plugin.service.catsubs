@@ -4,7 +4,7 @@
 import xbmc
 
 from importlib import import_module
-from modules.logger import log
+from .logger import log
 
 
 def importmodule(module_name, import_attr=None):

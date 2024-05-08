@@ -1,7 +1,7 @@
 from functools import wraps
 from typing import Any, Callable, TypeVar
 from httpx import HTTPStatusError
-from modules.subtitle_providers.i_provider import ISubtitleProvider
+from ..subtitle_providers.i_provider import ISubtitleProvider
 
 T = TypeVar("T", bound=ISubtitleProvider)
 

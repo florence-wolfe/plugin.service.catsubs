@@ -1,6 +1,6 @@
 import xbmcgui
 from typing import Optional, Callable
-from modules.constants import addon
+from ..constants import addon
 
 AddCallback = Callable[[], Optional[str]]
 EditCallback = Callable[[str], Optional[str]]

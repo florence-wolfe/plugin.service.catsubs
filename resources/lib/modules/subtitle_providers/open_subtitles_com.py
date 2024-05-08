@@ -1,12 +1,10 @@
 import httpx
-import json
 from typing import Dict, Any, List
-from httpx import HTTPStatusError
-from modules.subtitle_providers.i_provider import (
+from ..subtitle_providers.i_provider import (
     ISubtitleProvider,
     Subtitle,
 )
-from modules.subtitle_providers.auth_decorator import auth_required
+from ..subtitle_providers.auth_decorator import auth_required
 
 BASE_URL = "https://api.opensubtitles.com/api/v1"
 PROVIDER_NAME = "open_subtitles_com"
@@ -46,9 +44,7 @@ class OpenSubtitlesCom(ISubtitleProvider):
             "password": self.password,
         }
         async with httpx.AsyncClient() as client:
-            response = await client.post(
-                url, headers=headers, json=data
-            )
+            response = await client.post(url, headers=headers, json=data)
             if response.status_code == 200:
                 result = await response.json()
                 self.token = result["token"]

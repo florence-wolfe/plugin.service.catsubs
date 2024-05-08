@@ -4,15 +4,15 @@ import os
 import gzip
 import httpx
 from typing import List, Dict
-from service import player
-from modules.constants import addon
-from modules.subtitle_providers import get_providers
-from modules.subtitle_providers.i_provider import (
+from ..service import player
+from .constants import addon
+from .subtitle_providers import get_providers
+from .subtitle_providers.i_provider import (
     Subtitle,
     Downloadable,
 )
-from modules.gui_components.notification import notification
-from modules.global_filters import apply_global_filters
+from .gui_components.notification import notification
+from .global_filters import apply_global_filters
 
 
 def get_release_type():

@@ -2,9 +2,9 @@ import xbmc
 import asyncio
 import threading
 from typing import Callable, Optional
-from modules.logger import log
-from modules.constants import addon
-from modules.subtitle_handler import load_background_subtitles
+from .logger import log
+from .constants import addon
+from .subtitle_handler import load_background_subtitles
 
 CancelCallback = Optional[Callable[[], None]]
 

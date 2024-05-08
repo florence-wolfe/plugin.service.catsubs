@@ -1,5 +1,5 @@
 import xbmcgui
-from modules.constants import addon
+from ..constants import addon
 
 
 def notification(heading: str, message: str, time=5000):

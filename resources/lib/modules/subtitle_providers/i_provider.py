@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Optional, TypedDict
-from modules.constants import addon
+from ..constants import addon
 
 
 # TODO: Define a stricter type that the providers should adhere to
