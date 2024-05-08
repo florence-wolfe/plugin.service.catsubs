@@ -4,7 +4,6 @@ import os
 import gzip
 import httpx
 from typing import List, Dict
-from ..service import player
 from .constants import addon
 from .subtitle_providers import get_providers
 from .subtitle_providers.i_provider import (
@@ -86,7 +85,9 @@ def get_release_type():
         "hdrip": ["hdrip", "hd-rip", "hd rip", "hd.rip"],
     }
 
-    video_path = xbmc.Player().getPlayingFile().lower()
+    from ..service import player
+
+    video_path = player.getPlayingFile().lower()
     for release_type, variants in release_types.items():
         if any(variant in video_path for variant in variants):
             return release_type, variants
@@ -137,11 +138,15 @@ async def save_subtitles(subtitles: Dict[str, List[Downloadable]]):
                         xbmc.LOGERROR,
                     )
     if saved_subtitles:
+        from ..service import player
+
         player.setSubtitles(saved_subtitles[0])
 
 
 async def load_background_subtitles():
-    media = xbmc.Player().getVideoInfoTag().getMediaType()
+    from ..service import player
+
+    media = player.getVideoInfoTag().getMediaType()
     languages = addon.getSettings().getStringList("subtitle_languages")
     release_type, release_variants = get_release_type()
 
@@ -149,9 +154,8 @@ async def load_background_subtitles():
         # This is sketchy
         raise Exception("No suitable release type found.")
 
-    file = xbmc.Player().getPlayingFile()
+    file = player.getPlayingFile()
     notification(heading=release_type, message=file, time=4000)
-
     tmdb_id = player.getVideoInfoTag().getUniqueID("tmdb")
     season = player.getVideoInfoTag().getSeason()
     episode = player.getVideoInfoTag().getEpisode()
