@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.service.catsubs" name="CatSubs" version="0.0.1~alpha" provider-name="florence-wolfe">
   <requires>
