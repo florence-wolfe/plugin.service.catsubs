@@ -54,3 +54,6 @@ class CatSubsPlayer(xbmc.Player):
         elif action == 1:
             log("Opening subtitle dialog", xbmc.LOGDEBUG)
             xbmc.executebuiltin("ActivateWindow(SubtitleSearch)")
+
+
+player = CatSubsPlayer()

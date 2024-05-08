@@ -9,3 +9,6 @@ class CatSubsMonitor(xbmc.Monitor):
 
     def onSettingsChanged(self):
         pass
+
+
+monitor = CatSubsMonitor()

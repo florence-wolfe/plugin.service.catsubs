@@ -4,6 +4,7 @@ import os
 import gzip
 import httpx
 from typing import List, Dict
+from .player import player
 from .constants import addon
 from .subtitle_providers import get_providers
 from .subtitle_providers.i_provider import (
@@ -85,8 +86,6 @@ def get_release_type():
         "hdrip": ["hdrip", "hd-rip", "hd rip", "hd.rip"],
     }
 
-    from ..service import player
-
     video_path = player.getPlayingFile().lower()
     for release_type, variants in release_types.items():
         if any(variant in video_path for variant in variants):
@@ -138,14 +137,10 @@ async def save_subtitles(subtitles: Dict[str, List[Downloadable]]):
                         xbmc.LOGERROR,
                     )
     if saved_subtitles:
-        from ..service import player
-
         player.setSubtitles(saved_subtitles[0])
 
 
 async def load_background_subtitles():
-    from ..service import player
-
     media = player.getVideoInfoTag().getMediaType()
     languages = addon.getSettings().getStringList("subtitle_languages")
     release_type, release_variants = get_release_type()

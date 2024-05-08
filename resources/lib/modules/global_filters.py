@@ -1,7 +1,7 @@
 import xbmc
 import datetime
 from typing import List
-from ..service import player
+from .player import player
 from .constants import addon
 from .logger import log
 

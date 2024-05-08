@@ -2,14 +2,11 @@ import xbmc  # type: ignore
 import sys
 
 sys.modules["_asyncio"] = None  # type: ignore
-from modules.monitor import CatSubsMonitor  # noqa: E402
-from modules.player import CatSubsPlayer  # noqa: E402
+from modules.monitor import monitor  # noqa: E402
+from modules.player import player  # noqa: E402
 from modules.logger import log  # noqa: E402
 from modules.constants import ADDON_NAME, ADDON_VERSION  # noqa: E402
 
-
-monitor = CatSubsMonitor()
-player = CatSubsPlayer()
 
 while not monitor.abortRequested():
     log(f"Starting {ADDON_NAME} v{ADDON_VERSION}")
