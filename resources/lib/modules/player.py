@@ -4,7 +4,6 @@ import threading
 from typing import Callable, Optional
 from .logger import log
 from .constants import addon
-from .subtitle_handler import load_background_subtitles
 
 CancelCallback = Optional[Callable[[], None]]
 
@@ -50,6 +49,8 @@ class CatSubsPlayer(xbmc.Player):
         action = addon.getSettings().getInt("primary_subtitle_action")
         if action == 0:
             log("Downloading subtitles in background", xbmc.LOGDEBUG)
+            from .subtitle_handler import load_background_subtitles
+
             self.subtitle_task = asyncio.create_task(load_background_subtitles())
         elif action == 1:
             log("Opening subtitle dialog", xbmc.LOGDEBUG)
